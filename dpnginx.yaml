@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-dp
+  namespace: nginx-app
+  labels:
+    app: nginx-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx-pods
+  template:
+    metadata:
+      labels:
+        app: nginx-pods
+    spec:
+      containers:
+      - name: nginx-container
+        image: thiagomussolini/testenginx:v1
+        ports:
+        - containerPort: 8080
