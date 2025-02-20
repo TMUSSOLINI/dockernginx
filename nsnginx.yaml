@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginx-app
+  annotations:
+    desc: "Executando uma pagina HTML com o Nginx em um container Docker!"
+    owner: "Thiago Mussolini"
+    phone: "11948774793"
